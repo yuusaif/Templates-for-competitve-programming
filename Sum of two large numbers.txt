@@ -1,0 +1,26 @@
+string a, b;
+cin >> a >> b;
+reverse(a.begin(),a.end());
+reverse(b.begin(),b.end());
+if (b.size() > a.size())
+	swap(a, b);
+ll na = a.size();
+ll nb = b.size();
+ll c = 0;
+string s = "";
+for (ll i = 0; i < nb; i++)
+{
+	ll sum = (a[i] - '0') + (b[i] - '0') + c;
+	s.push_back(sum % 10 + '0');
+      c = (sum / 10);
+}
+for (ll i = nb; i < na; i++)
+{
+      ll sum = (a[i] - '0') + c;
+      s.push_back(sum % 10 + '0');
+      c = (sum / 10);
+}
+if (c)
+      s.push_back(c + '0');
+reverse(s.begin(),s.end());
+cout<<s;

@@ -1,0 +1,14 @@
+ll maxisubarrsum(ll a[],ll n)
+{
+    ll maxc,maxg;
+    maxc=maxg=a[0];
+    for(ll i=1;i<n;i++)
+    {
+        maxc=max(a[i],maxc+a[i]);
+        if(maxc>maxg)
+        {
+            maxg=maxc;
+        }
+    }
+    return maxg;
+}

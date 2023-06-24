@@ -1,0 +1,15 @@
+#define m 1000000000
+bool marked[m];
+void sieve(ll n)
+{
+    for(ll i=2;i*i<=n;i+=2)
+    {
+        if(marked[i]==0)       //i is prime
+	{
+	    for(ll j=i*i;j<=n;j+=i)
+	    {
+	        marked[j]=1;
+	    }
+	}
+    }
+}
